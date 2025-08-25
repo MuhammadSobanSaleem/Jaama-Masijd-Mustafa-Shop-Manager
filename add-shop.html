@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Shop | Jaama Masjid Mustafa</title>
+    <link rel="stylesheet" href="css/add-shop.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>Add New Shop</h1>
+            <div class="breadcrumb">
+                <a href="#">Home</a> / <a href="#">Shops</a> / Add New Shop
+            </div>
+        </div>
+
+        <!-- Form Container -->
+        <div class="form-container">
+            <form id="addShopForm">
+                <!-- Shop Information Section -->
+                <div class="form-section">
+                    <div class="section-title">
+                        <div class="section-icon shop-icon">#️⃣</div>
+                        Shop Information
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="shopNumber">Shop Number <span class="required">*</span></label>
+                        <div class="shop-number-display">
+                            <div class="shop-number-preview">
+                                <span class="hash">#</span><span>--</span>
+                            </div>
+                        </div>
+                        <input type="text" id="shopNumber" name="shopNumber" class="form-input" placeholder="Enter shop number (e.g., 10C)" required>
+                        <div class="help-text">Enter the unique shop identifier</div>
+                    </div>
+
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label class="form-label" for="shopName">Shop Name <span class="required">*</span></label>
+                            <input type="text" id="shopName" name="shopName" class="form-input" placeholder="Enter shop name" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="lastOwnerChange">Last Owner Change <span class="required">*</span></label>
+                            <input type="date" id="lastOwnerChange" name="lastOwnerChange" class="form-input" required>
+                            <div class="help-text">Date when the current owner took possession</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Owner Information Section -->
+                <div class="form-section">
+                    <div class="section-title">
+                        <div class="section-icon owner-icon">👤</div>
+                        Owner Information
+                    </div>
+                    
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label class="form-label" for="ownerName">Owner Name <span class="required">*</span></label>
+                            <input type="text" id="ownerName" name="ownerName" class="form-input" placeholder="Enter owner's full name" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="contactNumber">Contact Number <span class="required">*</span></label>
+                            <input type="tel" id="contactNumber" name="contactNumber" class="form-input" placeholder="Enter phone number" required>
+                        </div>
+                    </div>
+
+                    <div class="form-grid single">
+                        <div class="form-group">
+                            <label class="form-label" for="registrationDate">Registration Date <span class="required">*</span></label>
+                            <input type="date" id="registrationDate" name="registrationDate" class="form-input" required>
+                            <div class="help-text">Date when the shop was registered</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dues Information Section -->
+                <div class="form-section">
+                    <div class="section-title">
+                        <div class="section-icon dues-icon">💰</div>
+                        Dues Information
+                    </div>
+                    
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label class="form-label" for="monthlyAmount">Monthly Dues Amount <span class="required">*</span></label>
+                            <input type="number" id="monthlyAmount" name="monthlyAmount" class="form-input" placeholder="1250.00" step="0.01" min="0" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="dueDate">Due Date (Day of Month) <span class="required">*</span></label>
+                            <select id="dueDate" name="dueDate" class="form-select" required>
+                                <option value="">Select due date</option>
+                                <option value="1">1st of each month</option>
+                                <option value="2">2nd of each month</option>
+                                <option value="3">3rd of each month</option>
+                                <option value="4">4th of each month</option>
+                                <option value="5">5th of each month</option>
+                                <option value="6">6th of each month</option>
+                                <option value="7">7th of each month</option>
+                                <option value="8">8th of each month</option>
+                                <option value="9">9th of each month</option>
+                                <option value="10">10th of each month</option>
+                                <option value="11">11th of each month</option>
+                                <option value="12">12th of each month</option>
+                                <option value="13">13th of each month</option>
+                                <option value="14">14th of each month</option>
+                                <option value="15">15th of each month</option>
+                                <option value="16">16th of each month</option>
+                                <option value="17">17th of each month</option>
+                                <option value="18">18th of each month</option>
+                                <option value="19">19th of each month</option>
+                                <option value="20">20th of each month</option>
+                                <option value="21">21st of each month</option>
+                                <option value="22">22nd of each month</option>
+                                <option value="23">23rd of each month</option>
+                                <option value="24">24th of each month</option>
+                                <option value="25">25th of each month</option>
+                                <option value="26">26th of each month</option>
+                                <option value="27">27th of each month</option>
+                                <option value="28">28th of each month</option>
+                                <option value="29">29th of each month</option>
+                                <option value="30">30th of each month</option>
+                                <option value="31">31st of each month</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label class="form-label" for="lastPayment">Last Payment Date</label>
+                            <input type="date" id="lastPayment" name="lastPayment" class="form-input">
+                            <div class="help-text">Leave empty if no payment made yet</div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="outstandingAmount">Outstanding Amount</label>
+                            <input type="number" id="outstandingAmount" name="outstandingAmount" class="form-input" placeholder="0.00" step="0.01" min="0" value="0">
+                        </div>
+                    </div>
+
+                    
+                </div>
+
+                <!-- Form Actions -->
+                <div class="form-actions">
+                    <a href="#" class="btn btn-secondary">Cancel</a>
+                    <button type="submit" class="btn btn-primary">Add Shop</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="swal-overlay" id="swalSuccessModal">
+        <div class="swal-modal">
+            <div class="swal-icon">
+                <div class="swal-checkmark">✓</div>
+            </div>
+            <div class="swal-title">Success!</div>
+            <div class="swal-text">Shop has been added successfully</div>
+            <button class="swal-button" id="swalBtnSuccess">Done</button>
+        </div>
+    </div>
+
+    <!-- Error Modal -->
+    <div class="swal-overlay" id="swalErrorModal">
+        <div class="swal-modal">
+            <div class="swal-icon swal-icon-error">
+                <div class="swal-cross">✕</div>
+            </div>
+            <div class="swal-title swal-title-error">Error!</div>
+            <div class="swal-text">Shop could not be added</div>
+            <div class="swal-subtext">Please contact the developer to address this issue</div>
+            <button class="swal-button swal-button-error" id="swalBtnError">Close</button>
+        </div>
+    </div>
+    <script type="module" src="./js/add-shop.js" ></script>
+</body>
+</html>

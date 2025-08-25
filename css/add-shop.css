@@ -1,0 +1,483 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.header {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 24px;
+    margin-bottom: 24px;
+    color: white;
+}
+
+.header h1 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.breadcrumb {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.breadcrumb a {
+    color: white;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.breadcrumb a:hover {
+    opacity: 1;
+}
+
+.form-container {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 32px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.6s ease-out;
+}
+
+.form-section {
+    margin-bottom: 40px;
+}
+
+.form-section:last-child {
+    margin-bottom: 0;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.section-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 12px;
+    font-size: 16px;
+    color: white;
+}
+
+.shop-icon { background: linear-gradient(135deg, #667eea, #764ba2); }
+.owner-icon { background: linear-gradient(135deg, #f093fb, #f5576c); }
+.dues-icon { background: linear-gradient(135deg, #4facfe, #00f2fe); }
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.form-grid.single {
+    grid-template-columns: 1fr;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 8px;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+    padding: 12px 16px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    background: white;
+    font-family: inherit;
+    width: 100%;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.form-select {
+    cursor: pointer;
+}
+
+.shop-number-display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(102, 126, 234, 0.05);
+    border: 2px dashed #667eea;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 12px;
+}
+
+.shop-number-preview {
+    font-size: 24px;
+    font-weight: 700;
+    color: #667eea;
+}
+
+.shop-number-preview .hash {
+    color: #38a169;
+}
+
+.form-actions {
+    display: flex;
+    gap: 16px;
+    justify-content: flex-end;
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 1px solid #e2e8f0;
+}
+
+.btn {
+    padding: 14px 28px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+}
+
+.btn-secondary {
+    background: #f7fafc;
+    color: #4a5568;
+    border: 2px solid #e2e8f0;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.required {
+    color: #e53e3e;
+}
+
+.help-text {
+    font-size: 12px;
+    color: #718096;
+    margin-top: 4px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 10px;
+    }
+
+    .header h1 {
+        font-size: 24px;
+    }
+
+    .form-container {
+        padding: 24px 20px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .status-selector {
+        flex-direction: column;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Demo buttons */
+.demo-container {
+    display: flex;
+    gap: 16px;
+}
+
+.demo-btn {
+    padding: 16px 32px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.demo-btn.error {
+    background: linear-gradient(135deg, #e53e3e, #fc8181);
+}
+
+.demo-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Modal Overlay */
+.swal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.swal-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Modal Container */
+.swal-modal {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 40px;
+    width: 400px;
+    max-width: 90vw;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    transform: scale(0.8);
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.swal-overlay.show .swal-modal {
+    transform: scale(1);
+}
+
+/* Success Icon */
+.swal-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 24px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #38a169, #68d391);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.swal-icon::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.3) 50%, transparent 70%);
+    animation: shimmer 2s infinite;
+}
+
+.swal-checkmark {
+    color: white;
+    font-size: 36px;
+    font-weight: bold;
+    z-index: 2;
+    position: relative;
+    animation: checkmarkPop 0.6s ease 0.2s both;
+}
+
+/* Error Icon */
+.swal-icon-error {
+    background: linear-gradient(135deg, #e53e3e, #fc8181);
+}
+
+.swal-cross {
+    color: white;
+    font-size: 36px;
+    font-weight: bold;
+    z-index: 2;
+    position: relative;
+    animation: crossShake 0.6s ease 0.2s both;
+}
+
+/* Modal Content */
+.swal-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 12px;
+}
+
+.swal-title-error {
+    color: #e53e3e;
+}
+
+.swal-text {
+    font-size: 16px;
+    color: #718096;
+    margin-bottom: 32px;
+    line-height: 1.5;
+}
+
+.swal-subtext {
+    font-size: 14px;
+    color: #a0aec0;
+    margin-bottom: 24px;
+    font-style: italic;
+}
+
+/* Action Button */
+.swal-button {
+    padding: 12px 32px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 120px;
+}
+
+.swal-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+}
+
+.swal-button:active {
+    transform: translateY(0);
+}
+
+.swal-button-error {
+    background: linear-gradient(135deg, #e53e3e, #fc8181);
+}
+
+.swal-button-error:hover {
+    box-shadow: 0 8px 25px rgba(229, 62, 62, 0.3);
+}
+
+/* Animations */
+@keyframes checkmarkPop {
+    0% {
+        opacity: 0;
+        transform: scale(0) rotate(180deg);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2) rotate(-10deg);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+@keyframes crossShake {
+    0% {
+        opacity: 0;
+        transform: scale(0) rotate(-45deg);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.1) rotate(5deg);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .demo-container {
+        flex-direction: column;
+    }
+    
+    .swal-modal {
+        padding: 32px 24px;
+    }
+    
+    .swal-title {
+        font-size: 20px;
+    }
+    
+    .swal-icon {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .swal-checkmark,
+    .swal-cross {
+        font-size: 30px;
+    }
+}

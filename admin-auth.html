@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Authorization</title>
+    <link rel="stylesheet" href="css/admin-auth.css">
+</head>
+<body>
+    <!-- Islamic Pattern Background -->
+    <div class="pattern-overlay"></div>
+
+    <div class="auth-container">
+        <!-- Header -->
+        <div class="auth-header">
+            <div class="auth-icon">🔐</div>
+            <h1 class="auth-title">Admin Access</h1>
+            <p class="auth-subtitle">Enter your access code to continue</p>
+            <p class="mosque-name">Jaama Masjid Mustafa</p>
+        </div>
+
+        <!-- Security Notice -->
+        <div class="security-notice">
+            <span class="security-icon">⚠️</span>
+            This area is restricted to authorized personnel only. All access attempts are logged for security purposes.
+        </div>
+
+        <!-- Authentication Form -->
+        <form class="auth-form">
+            <div class="form-group">
+                <label class="form-label" for="accessCode">Access Code</label>
+                <input 
+                    type="password" 
+                    id="accessCode" 
+                    name="accessCode" 
+                    class="code-input" 
+                    placeholder="Enter code"
+                    maxlength="10"
+                    required
+                >
+                <div class="error-message" id="errorMessage">Invalid access code. Please try again.</div>
+            </div>
+
+            <button type="submit" class="submit-btn" id="submitBtn">
+                Verify Access
+            </button>
+        </form>
+
+        <!-- Back Link -->
+        <div class="back-link">
+            <a href="index.html">← Back to Main Page</a>
+        </div>
+    </div>
+    <script>
+    document.querySelector('.auth-form').addEventListener('submit', function(e) {
+        e.preventDefault(); // Prevent form from submitting
+
+        const accessCodeInput = document.querySelector('#accessCode');
+        const errorMessage = document.getElementById('errorMessage');
+        const correctCode = "123456"; // <-- Change this to your actual code
+
+        if (accessCodeInput.value === correctCode) {
+            // Redirect to shops.html
+            window.open("shops.html", "_blank");
+        } else {
+            // Show error message and shake input
+            errorMessage.classList.add('show');
+            accessCodeInput.classList.add('error');
+
+            // Optional: Remove shake after animation ends
+            setTimeout(() => {
+                accessCodeInput.classList.remove('error');
+            }, 500);
+        }
+    });
+    </script>
+</body>
+</html>
