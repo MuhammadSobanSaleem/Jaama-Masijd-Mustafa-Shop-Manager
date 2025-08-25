@@ -1,7 +1,8 @@
 # 🏪 Shop Management System
 
-A simple and practical **Shop Management System** built for **Mustafa Jaama Masjid B Area**, developed using **HTML, CSS, JavaScript, and Firebase (Firestore)**.  
+A simple, responsive, and practical **Shop Management System** built for **Mustafa Jaama Masjid B Area**, developed using **HTML, CSS, JavaScript, and Firebase (Firestore)**.  
 The project mainly focuses on **CRUD operations** (Create, Read, Update, Delete).
+
 
 ---
 
