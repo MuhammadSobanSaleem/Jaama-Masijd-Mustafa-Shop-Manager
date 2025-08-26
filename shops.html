@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shops Manager | Jaama Masjid Mustafa</title>
+    <link rel="stylesheet" href="css/shops.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=search" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet"></head>
+<body>
+    
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="header-left">
+                <h1>Shops Management</h1>
+                <div class="breadcrumb">
+                    <a href="#">Home</a> / Shops
+                </div>
+            </div>
+            <button class="add-shop-btn">
+                <a href="add-shop.html">
+                    ➕ Add New Shop
+                </a>
+            </button>
+        </div>
+
+        <!-- Search Controls -->
+        <div class="controls">
+            <div class="search-container">
+                <div class="search-icon">🔍</div>
+                <input type="text" class="search-input" placeholder="Search shops by owner name or shop number...">
+            </div>
+        </div>
+
+        <!-- Shops List -->
+        <div class="shops-list">
+            <!-- List Header -->
+            <div class="list-header">
+                <div>Shop No</div>
+                <div>Owner</div>
+                <div>Dues</div>
+                <div>Actions</div>
+            </div>
+
+            
+        </div>
+    </div>
+
+
+    <!-- Delete Confirmation Modal with Password -->
+    <div class="swal-overlay" id="swalDeleteModal">
+        <div class="swal-modal">
+            <div class="swal-icon swal-icon-warning">
+                <div class="swal-warning">⚠</div>
+            </div>
+            <div class="swal-title swal-title-warning">Admin Verification Required</div>
+            <div class="swal-text">
+                You are about to delete shop <span class="shop-highlight" id="deleteShopNumber">#10C</span>
+            </div>
+            <div class="password-container">
+                <label class="password-label" for="adminPassword">Enter Admin Password:</label>
+                <input 
+                    type="password" 
+                    id="adminPassword" 
+                    class="password-input" 
+                    placeholder="Enter password..."
+                    autocomplete="current-password"
+                    value="admin123"
+                >
+                <div class="password-error" id="passwordError">Incorrect password. Please try again.</div>
+            </div>
+            <div class="swal-subtext">This action cannot be undone</div>
+            <div class="swal-actions">
+                <button class="swal-button swal-button-cancel" onclick="closeSwal('delete')">Cancel</button>
+                <button class="swal-button swal-button-delete" id="deleteButton" onclick="verifyPasswordAndDelete()">
+                    <div class="loading-spinner"></div>
+                    <span>Delete</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Success Modal -->
+    <div class="swal-overlay" id="swalDeleteSuccessModal">
+        <div class="swal-modal">
+            <div class="swal-icon swal-icon-success">
+                <div class="swal-checkmark">✓</div>
+            </div>
+            <div class="swal-title">Shop Deleted!</div>
+            <div class="swal-text">Shop <span class="shop-highlight" id="deletedShopNumber">#10C</span> has been successfully deleted</div>
+            <div class="swal-actions">
+                <button class="swal-button swal-button-success" onclick="closeSwal('deleteSuccess')">Done</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="./js/index.js"></script>
+    <script type="module" src="./js/shops.js"></script>
+    <script type="module" src="./js/firestore.js"></script>
+</body>
+</html>

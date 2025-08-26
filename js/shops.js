@@ -60,11 +60,10 @@ async function showShopInList() {
         if (!actions) return; // click outside buttons
 
         const shopId = actions.dataset.id;
-        const shopNumber = actions.dataset.shopNumber;
 
         if (e.target.classList.contains('btn-delete')) {
-            currentShopData = { id: shopId, shopNumber };
-            showDeleteConfirmation(shopNumber);
+            currentShopData = { id: shopId, shopNumber: shopId };
+            showDeleteConfirmation(currentShopData.shopNumber);
         } 
         else if (e.target.classList.contains('btn-details')) {
             window.location.href = `shop-details.html?id=${shopId}`;
@@ -115,7 +114,7 @@ function sortShopsByNumber(shops) {
 
 function showDeleteConfirmation(shopNumber) {
     document.getElementById('deleteShopNumber').textContent = '#' + shopNumber;
-    document.getElementById('adminPassword').value = '';
+    document.getElementById('adminPassword').value = 'admin123';
     clearPasswordError();
     const modal = document.getElementById('swalDeleteModal');
     modal.classList.add('show');
